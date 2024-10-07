@@ -1,0 +1,43 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+}
+
+header {
+  display: block;
+  /* background: url("./template_1584x396.jpg"); */
+  background-color: #1d1d1d;
+  height: 364px;
+  width: 1552px;
+  font-size: 40px;
+  padding: 20px;
+  margin: 0;
+}
+
+.name {
+  color: #20C20E
+}
+
+.keyword {
+  font-weight: bold;
+}
+
+.class {
+  color: HSL(200, 90%, 40%);
+}
+
+#brackets {
+  float: right;
+  color: #4f4f4f
+}
+
+hr {
+  color: #4f4f4f;
+}
+
+p {
+  margin: 0%;
+  color: #4f4f4f;
+  float: right;
+}
