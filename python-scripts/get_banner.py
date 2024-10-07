@@ -30,7 +30,7 @@ def get_banner():
         driver.set_window_size(banner_width, banner_height)
 
         # Tomar la captura de pantalla
-        name_screenshot = f"banner-linkedin-{datetime.now().time().strftime("%H:%M")}.png"
+        name_screenshot = f"banner-linkedin-{datetime.now().time().strftime('%H:%M')}.png"
         driver.save_screenshot(os.path.join(ruta_banner, "banners", name_screenshot))
 
         print(f"Imagen PNG generada: {name_screenshot}")
