@@ -2,9 +2,12 @@ from selenium import webdriver
 import time 
 import os
 from datetime import datetime 
+from modify_html import ruta_html
 
-file_path = 'file:///' + os.path.abspath('banner.html')
+ruta_banner = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ruta_source = os.path.join(ruta_html, "banner.html")
 
+print(f"hello {ruta_source}")
 
 # Configuración de Selenium con ChromeDriver
 options = webdriver.ChromeOptions()
@@ -16,7 +19,7 @@ driver = webdriver.Chrome(options=options)
 def get_banner():
     try:
         # Cargar el archivo HTML
-        driver.get(file_path)
+        driver.get(f"file://{ruta_source}")
 
         # Esperar un momento para asegurarse de que todo el contenido esté cargado
         time.sleep(2)
@@ -28,7 +31,7 @@ def get_banner():
 
         # Tomar la captura de pantalla
         name_screenshot = f"banner-linkedin-{datetime.now().time().strftime("%H:%M")}.png"
-        driver.save_screenshot(f"../banners/{name_screenshot}")
+        driver.save_screenshot(os.path.join(ruta_banner, "banners", name_screenshot))
 
         print(f"Imagen PNG generada: {name_screenshot}")
     finally:
